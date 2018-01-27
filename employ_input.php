@@ -43,8 +43,9 @@
 
 </table>
 
-<input type="submit" value="登録">
+<input type="submit" value="登録して次へ">
 </form>
+<button　id="closeBtn">終了</button>
 
 </body>
 </html>

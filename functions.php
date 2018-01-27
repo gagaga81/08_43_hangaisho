@@ -1,18 +1,40 @@
 <?php
+
+// XSS対策
 function h($value) {
     return htmlspecialchars($value,ENT_QUOTES);
     }
 
+// DB接続
+function db_con(){
+    try {
+        $pdo = new PDO('mysql:dbname=gs_work_db;charset=utf8;host=localhost','root','');
+        return $pdo;
+    } catch (PDOException $e) {
+        exit('データベースに接続できませんでした。'.$e->getMessage());
+    }
+}
 
-// function arr2csv($fields) {
-//     $fp = fopen('php://temp', 'r+b');
-//     foreach($fields as $field) {
-//         fputcsv($fp, $field);
-//     }
-//     rewind($fp);
-//     $tmp = str_replace(PHP_EOL, "\r\n", stream_get_contents($fp));
-//     return mb_convert_encoding($tmp, 'SJIS-win', 'UTF-8');
+//　SQL処理エラー
+function error_db_info($stmt){
+    $error = $stmt->errorInfo();
+    exit("ErrorQuery:".$error[2]);
+}
+
+/*----------------------------------------------
+以下、自分で考えて入れた関数たち
+----------------------------------------------*/
+
+// うまくいかない、、、、
+// function up_window($id){
+//     $str .="javascript:imageup('employ_detail.php?id=";
+//     $str .=$id;
+//     $str .="');"
+//     return $str;
 // }
+
+
+
 
 
 ?>
