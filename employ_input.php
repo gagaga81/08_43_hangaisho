@@ -10,7 +10,7 @@
 
 </header>
 
-<form action="employ_output.php" method="post">
+<form action="employ_insert.php" method="post">
 <table>
     <tr>
         <td>社員番号</td>
@@ -45,7 +45,7 @@
 
 <input type="submit" value="登録して次へ">
 </form>
-<button　id="closeBtn">終了</button>
+<button>終了</button>
 
 </body>
 </html>

@@ -26,9 +26,13 @@ if($status==false){
         $view .= $result["id"];
         $view .= "</a>";
         $view .= "</td><td>";
+        $view .= "<a href='employ_detail.php?id=".$result["id"]."'>";
         $view .= $result["employ_id"];
+        $view .= "</a>";
         $view .= "</td><td>";
+        $view .= "<a href='employ_detail.php?id=".$result["id"]."'>";
         $view .= $result["employ_name"];
+        $view .= "</a>";
         $view .= "</td><td>";
         $view .= $result["employ_yomi"];
         $view .= "</td><td>";
@@ -40,7 +44,11 @@ if($status==false){
         $view .= "</td><td>";
         $view .= $result["employ_memo"];
         $view .= "</td><td>";
+        $view .= $result["employ_regidate"];
+        $view .= "</td><td>";
         $view .= $result["employ_updatetime"];
+        $view .= "</td><td>";
+        $view .= "<button>削除</button>";
         $view .= "</td></tr>";
         
     }
@@ -51,6 +59,7 @@ if($status==false){
 <body>
     <?php include"header.html" ?>
 <a href="javascript:imageup('employ_input.php');"><button>新規登録</button></a>
+<button>CSV出力</button>
 
 
 <table>
@@ -63,7 +72,9 @@ if($status==false){
         <th>入社日</th>
         <th>時給</th>
         <th>メモ</th>
+        <th>登録日時</th>
         <th>更新日時</th>
+        <th></th>
     </tr>
 
     <?=$view?>

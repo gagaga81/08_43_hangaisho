@@ -29,12 +29,13 @@ if($status==false){
 <body>
 
 <header>
-    <h1>新規登録</h1>
+    <h1>修正更新</h1>
 
 
 </header>
 
-<form action="employ_output.php" method="post">
+<form action="employ_update.php" method="post">
+    <input type="hidden" name="id" value="<?=$id?>">
 <table>
     <tr>
         <td>社員番号</td>

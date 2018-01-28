@@ -1,9 +1,9 @@
 @charset "utf-8";
-ul {
+.header_ul {
     display: flex;
 }
 
-li {
+.header_li {
     display: flex;
     width: 200px;
     height: 1.5rem;

@@ -21,6 +21,22 @@ function error_db_info($stmt){
     exit("ErrorQuery:".$error[2]);
 }
 
+// INTのbindValue
+function bvINT($stmt,$valueINT){
+    $stmt->bindValue(":".$valueINT, $valueINT, PDO::PARAM_INT);
+}
+
+// STRのbindValue
+function bvSTR($stmt,$valueSTR){
+    $stmt->bindValue(":".$valueSTR, $valueSTR, PDO::PARAM_STR);
+}
+
+
+
+
+
+
+
 /*----------------------------------------------
 以下、自分で考えて入れた関数たち
 ----------------------------------------------*/
