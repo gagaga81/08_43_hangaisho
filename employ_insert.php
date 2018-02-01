@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-<?php include"head.html";
+<?php
 include"functions.php";
 
 // 入力チェック
@@ -11,7 +9,7 @@ if(
     !isset($_POST["employ_birthday"]) || $_POST["employ_birthday"]=="" ||
     !isset($_POST["employ_hiredate"]) || $_POST["employ_hiredate"]=="" ||
     !isset($_POST["employ_Hwage"]) || $_POST["employ_Hwage"]=="" ||
-    !isset($_POST["employ_memo"]) || $_POST["employ_memo"]==""
+    !isset($_POST["employ_memo"]) 
 ){
     exit("ParamError");
 }

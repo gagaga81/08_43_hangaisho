@@ -1,3 +1,43 @@
+<?php
+include("functions.php");
+
+// DB接続
+$pdo = db_con();
+
+
+// データ登録SQL作成
+$stmt = $pdo->prepare("SELECT * FROM gs_an_table");
+$status = $stmt->execute();
+
+//　データ表示
+$view="";
+if($status==false){
+    $error = $stmt->errorInfo();
+    exit("ErrorQuery".$error[2]);
+
+}else{
+    while($result = $stmt->fetch(PDO::FETCH_ASSOC)){
+        $view .= "<tr><td>";
+        $view .= $result["employ_id"];
+        $view .= "</td><td>";
+        $view .= $result["employ_name"];
+        $view .= "</td><td>";
+        $view .= "<input type='number' name='work_days'>";
+        $view .= "</td><td>";
+        $view .= "<input type='number' name='work_time'>";
+        $view .= "</td><td>";
+        $view .= "<input type='text' name='work_memo'>";
+        $view .= "</td></tr>";
+        
+    }
+}
+
+
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -11,9 +51,20 @@
   <select name="year" id="year_select"></select>
   <select name="year" id="month_select"></select>
 
-  <input type="number" name="employ_id" id="employ_id">
 </form>
+<button>登録</button>
 
+<table>
+    <tr>
+        <th>社員番号</th>
+        <th>氏名</th>
+        <th>出勤日数</th>
+        <th>勤務時間</th>
+        <th>メモ</th>
+    </tr>
+
+    <?=$view?>
+</table>
 
 
 <script>

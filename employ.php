@@ -48,7 +48,7 @@ if($status==false){
         $view .= "</td><td>";
         $view .= $result["employ_updatetime"];
         $view .= "</td><td>";
-        $view .= "<button>削除</button>";
+        $view .= "<input type='button' value='削除' onClick='location.href=\"employ_delete.php?id=".$result["id"]."\"'>";
         $view .= "</td></tr>";
         
     }

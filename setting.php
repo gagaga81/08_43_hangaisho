@@ -10,16 +10,14 @@ include("functions.php");
     <?php include"header.html" ?>
 
     <div class="setting_block">
-        <h3>ユーザー管理</h3>
+        <h3><ユーザー管理></h3>
 
         <ul>
-            <a href=""><li>
+            <a href="setting_user_register.php"><li>
                 ユーザー登録
             </li></a>
-            <a href=""><li>
-                ユーザー削除
             </li></a>
-            <a href=""><li>
+            <a href="setting_user.php"><li>
                 ユーザー参照
             </li></a>
         </ul>
